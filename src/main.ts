@@ -17,7 +17,7 @@ function getFirstElement<T>(arr: T[]): T {
 
 getFirstElement<number>([10, 20, 30]);
 
-getFirstElement<number>(['Alice', 'Bob']);
+getFirstElement<string>(['Alice', 'Bob']);
 
 // GENERICS в interface
 
@@ -33,6 +33,7 @@ const numberList: List<number> = {
   },
 };
 
+console.log(numberList);
 const stringList: List<string> = {
   items: ['Alice', 'Bob'],
   getItem(index) {
