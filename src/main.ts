@@ -1,100 +1,120 @@
 import './style.css';
+import './task-1';
+import './task-10';
+import './task-11';
+import './task-12';
+import './task-13';
+import './task-14';
+import './task-15';
+import './task-16';
+import './task-17';
+import './task-18';
+import './task-19';
+import './task-2';
+import './task-20';
+import './task-3';
+import './task-4';
+import './task-5';
+import './task-6';
+import './task-7';
+import './task-8';
+import './task-9';
 import './training';
 
 ///generics
 
-function myFunction<T>(value: T): T {
-  return value;
-}
+// function myFunction<T>(value: T): T {
+//   return value;
+// }
 
-myFunction<string>('Hello');
+// myFunction<string>('Hello');
 
-myFunction<number>(42);
+// myFunction<number>(42);
 
-function getFirstElement<T>(arr: T[]): T {
-  return arr[0];
-}
+// function getFirstElement<T>(arr: T[]): T {
+//   return arr[0];
+// }
 
-getFirstElement<number>([10, 20, 30]);
+// getFirstElement<number>([10, 20, 30]);
 
-getFirstElement<string>(['Alice', 'Bob']);
+// getFirstElement<string>(['Alice', 'Bob']);
 
-// GENERICS в interface
+// // GENERICS в interface
 
-interface List<T> {
-  items: T[];
-  getItem: (index: number) => T;
-}
+// interface List<T> {
+//   items: T[];
+//   getItem: (index: number) => T;
+// }
 
-const numberList: List<number> = {
-  items: [1, 2, 3],
-  getItem(index) {
-    return this.items[index];
-  },
-};
+// const numberList: List<number> = {
+//   items: [1, 2, 3],
+//   getItem(index) {
+//     return this.items[index];
+//   },
+// };
 
-console.log(numberList);
-const stringList: List<string> = {
-  items: ['Alice', 'Bob'],
-  getItem(index) {
-    return this.items[index];
-  },
-};
+// console.log(numberList);
+// const stringList: List<string> = {
+//   items: ['Alice', 'Bob'],
+//   getItem(index) {
+//     return this.items[index];
+//   },
+// };
 
-// List<T> – це узагальнений інтерфейс для будь-якого типу T.
-// items: T[] – масив елементів типу T.
-// getItem(index: number): T – метод, який повертає значення того ж типу T.
+// // List<T> – це узагальнений інтерфейс для будь-якого типу T.
+// // items: T[] – масив елементів типу T.
+// // getItem(index: number): T – метод, який повертає значення того ж типу T.
 
-//////////////////////////////
+// //////////////////////////////
 
-// Generics у відповідях API
+// // Generics у відповідях API
 
-interface ApiResponse<T> {
-  data: T;
-  status: number;
-}
+// interface ApiResponse<T> {
+//   data: T;
+//   status: number;
+// }
 
-const userResponse: ApiResponse<{ id: number; name: string }> = {
-  data: {
-    id: 1,
-    name: 'Alice',
-  },
-  status: 200,
-};
+// const userResponse: ApiResponse<{ id: number; name: string }> = {
+//   data: {
+//     id: 1,
+//     name: 'Alice',
+//   },
+//   status: 200,
+// };
 
-const invoiceResponce: ApiResponse<{ email: string; amount: number }> = {
-  data: {
-    email: 'alice@mail.com',
-    amount: 150,
-  },
-  status: 201,
-};
+// const invoiceResponce: ApiResponse<{ email: string; amount: number }> = {
+//   data: {
+//     email: 'alice@mail.com',
+//     amount: 150,
+//   },
+//   status: 201,
+// };
 
-// Типизация промисов:
+// // Типизация промисов:
 
-const getData = (): Promise<string> => {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve('Hello, TypeScript'), 1000);
-  });
-};
+// const getData = (): Promise<string> => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve('Hello, TypeScript'), 1000);
+//   });
+// };
 
-// getData().then((user) => console.log(user.name));
+// // getData().then((user) => console.log(user.name));
 
-interface User {
-  id: number;
-  name: string;
-}
+// interface User {
+//   id: number;
+//   name: string;
+// }
 
-const getUser = (): Promise<User> => {
-  return new Promise((resolve) => {
-    setTimeout(() => resolve({ id: 1, name: 'Alice' }), 1000);
-  });
-};
+// const getUser = (): Promise<User> => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => resolve({ id: 1, name: 'Alice' }), 1000);
+//   });
+// };
 
-// getUser().then((user) => console.log(user.name)); // "Alice"
+// // getUser().then((user) => console.log(user.name)); // "Alice"
 
-let status: 'pending' | 'disabled' | 'active' = 'active';
+// let status: 'pending' | 'disabled' | 'active' = 'active';
 
-status = 'disabled';
+// status = 'disabled';
 
-// console.log(status.toUpperCase());
+// // console.log(status.toUpperCase());
